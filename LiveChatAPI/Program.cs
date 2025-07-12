@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()
-            .WithOrigins("http://localhost:5173"); // React Vite portu
+            .WithOrigins("https://chat-app-nu-kohl-35.vercel.app"); // React Vite portu
     });
 });
 
