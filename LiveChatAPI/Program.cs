@@ -9,6 +9,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
+
+string CORSPath = builder.Configuration["UICORSPath"];
+
+#region azureEnv
+string AzureCORSPath = Environment.GetEnvironmentVariable("AzureUICORSPath");
+if (AzureCORSPath != null) CORSPath = AzureCORSPath;
+#endregion
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
@@ -17,7 +25,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()
-            .WithOrigins(builder.Configuration.GetSection("UICORSPath").Value); // React Vite portu
+            .WithOrigins(CORSPath); // React UI portu
     });
 });
 
