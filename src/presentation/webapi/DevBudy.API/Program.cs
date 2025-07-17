@@ -1,5 +1,9 @@
 //using LiveChatAPI.Hubs;
 
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using DevBudy.DEPENDENCYRESOLVER.Bootstrappers;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -28,6 +32,11 @@ builder.Services.AddCors(options =>
             .WithOrigins(CORSPath); // React UI portu
     });
 });
+
+// Autofac DI Container
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+// AutoFac modüllerini yükleme
+builder.Host.ConfigureContainer<ContainerBuilder>(Bootstrapper.ConfigureServices);
 
 WebApplication app = builder.Build();
 

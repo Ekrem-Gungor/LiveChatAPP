@@ -30,7 +30,7 @@ namespace DevBudy.DOMAIN.Entities.Concretes
         public ActiveStatus ActiveStatus { get; set; }
 
         // Relational Properties
-        //public virtual AppUserProfile Profile { get; set; }
+        public virtual AppUserProfile Profile { get; set; }
         public virtual ICollection<AppUserRole> UserRoles { get; set; }
     }
 }
