@@ -1,4 +1,4 @@
-using LiveChatAPI.Hubs;
+//using LiveChatAPI.Hubs;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +44,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapHub<ChatHub>("/chatHub");
+//app.MapHub<ChatHub>("/chatHub");
 
 app.Run();

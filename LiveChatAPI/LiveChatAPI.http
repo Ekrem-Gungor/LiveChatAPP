@@ -1,6 +1,0 @@
-@LiveChatAPI_HostAddress = http://localhost:5252
-
-GET {{LiveChatAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
