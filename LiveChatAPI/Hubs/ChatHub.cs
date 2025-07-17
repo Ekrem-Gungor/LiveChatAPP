@@ -26,6 +26,8 @@ namespace LiveChatAPI.Hubs
 
         public async Task Join(string user)
         {
+            if (UserConnections.ContainsValue(user)) return;
+
             UserConnections[Context.ConnectionId] = user;
 
             await Clients.All.SendAsync("ReceiveMessage", new ChatMessage

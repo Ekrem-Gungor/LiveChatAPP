@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()
-            .WithOrigins("https://chat-app-nu-kohl-35.vercel.app"); // React Vite portu
+            .WithOrigins(builder.Configuration.GetSection("UICORSPath").Value); // React Vite portu
     });
 });
 
