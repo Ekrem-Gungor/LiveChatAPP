@@ -12,7 +12,7 @@ namespace DevBudy.DEPENDENCYRESOLVER.Bootstrappers
     {
         public static void ConfigureServices(ContainerBuilder builder)
         {
-            //builder.RegisterModule(new PersistenceDIModule());
+            builder.RegisterModule(new PersistanceModule());
             //builder.RegisterModule(new InfrastructureDIModule());
             builder.RegisterModule(new DevBudyContextModule());
             builder.RegisterModule(new IdentityServiceInjectionModule());

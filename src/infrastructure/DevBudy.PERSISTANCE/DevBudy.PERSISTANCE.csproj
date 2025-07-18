@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\core\DevBudy.CONTRACT\DevBudy.CONTRACT.csproj" />
     <ProjectReference Include="..\..\core\DevBudy.DOMAIN\DevBudy.DOMAIN.csproj" />
   </ItemGroup>
 
