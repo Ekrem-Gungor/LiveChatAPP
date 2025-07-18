@@ -15,6 +15,7 @@ namespace DevBudy.PERSISTANCE.Configurations
             base.Configure(builder);
             builder.Ignore(u => u.ID);
             builder.HasMany(u => u.UserRoles).WithOne(ur => ur.User).HasForeignKey(ur => ur.UserId).IsRequired();
+            builder.HasMany(u => u.ChatMessages).WithOne(cm => cm.Sender).HasForeignKey(cm => cm.SenderID).IsRequired();
             builder.HasOne(u => u.Profile).WithOne(p => p.AppUser).HasForeignKey<AppUserProfile>(p => p.ID);
         }
     }

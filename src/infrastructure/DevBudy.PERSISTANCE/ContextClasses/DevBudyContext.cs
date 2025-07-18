@@ -33,5 +33,6 @@ namespace DevBudy.PERSISTANCE.ContextClasses
         public virtual DbSet<AppRole> AppRoles { get; set; }
         public virtual DbSet<AppUserRole> AppUserRoles { get; set; }
         public virtual DbSet<AppUserProfile> AppUserProfiles { get; set; }
+        public virtual DbSet<ChatMessage> ChatMessages { get; set; }
     }
 }
