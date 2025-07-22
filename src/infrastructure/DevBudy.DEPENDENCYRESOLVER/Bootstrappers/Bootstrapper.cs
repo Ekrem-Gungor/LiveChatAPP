@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using DevBudy.DEPENDENCYRESOLVER.Persistances;
+using DevBudy.DOMAIN.Entities.Concretes;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +14,9 @@ namespace DevBudy.DEPENDENCYRESOLVER.Bootstrappers
     {
         public static void ConfigureServices(ContainerBuilder builder)
         {
+            //builder.RegisterModule(new IdentityServiceInjectionModule()); todo : Burada bir takım sorunlar var incelenecek !
             builder.RegisterModule(new PersistanceModule());
-            //builder.RegisterModule(new InfrastructureDIModule());
             builder.RegisterModule(new DevBudyContextModule());
-            builder.RegisterModule(new IdentityServiceInjectionModule());
         }
     }
 }

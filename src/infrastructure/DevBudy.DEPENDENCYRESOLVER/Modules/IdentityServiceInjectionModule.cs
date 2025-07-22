@@ -32,7 +32,7 @@ namespace DevBudy.DEPENDENCYRESOLVER.Persistances
                 })
                 .AddRoles<AppRole>()
                 .AddEntityFrameworkStores<DevBudyContext>()
-                .AddTokenProvider<DataProtectorTokenProvider<AppUser>>("Default");
+                .AddDefaultTokenProviders();
                 return services;
             }).AsSelf().InstancePerLifetimeScope();
             // Bu servis uygulama ömrü boyunca tek bir örnek olarak kullanılacak. AsSelf() ise bu servisin kendisini kaydeder, böylece DI konteyneri bu servisi çözebilir.

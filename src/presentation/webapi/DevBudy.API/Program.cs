@@ -1,8 +1,9 @@
-//using LiveChatAPI.Hubs;
-
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using DevBudy.API.Hubs;
+using DevBudy.APPLICATION.Features.Auths.Commands;
 using DevBudy.DEPENDENCYRESOLVER.Bootstrappers;
+using DevBudy.DEPENDENCYRESOLVER.CustomServiceInjections;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,19 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCustomIdentityServices();
+
+// Autofac DI Container
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+// AutoFac modüllerini yükleme
+builder.Host.ConfigureContainer<ContainerBuilder>(Bootstrapper.ConfigureServices);
+
+builder.Services.AddMediatR(config =>
+{
+    config.RegisterServicesFromAssemblies(typeof(LoginUserCommandHandler).Assembly);
+    config.RegisterServicesFromAssemblyContaining<Program>();
+});
 builder.Services.AddSignalR();
 
 string CORSPath = builder.Configuration["UICORSPath"];
@@ -33,11 +47,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Autofac DI Container
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-// AutoFac modüllerini yükleme
-builder.Host.ConfigureContainer<ContainerBuilder>(Bootstrapper.ConfigureServices);
-
 WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -53,6 +62,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.MapHub<ChatHub>("/chatHub");
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();
