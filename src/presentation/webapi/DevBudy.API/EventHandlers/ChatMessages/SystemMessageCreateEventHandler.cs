@@ -20,8 +20,8 @@ namespace DevBudy.API.EventHandlers.ChatMessages
             await _hubContext.Clients.All.SendAsync("ReceiveSystemMessage", new
             {
                 message.JoinedUserName,
-                message.SenderName,
-                message.SystemMessage,
+                message.SenderUserName,
+                message.Message,
                 message.SendAt
             });
         }

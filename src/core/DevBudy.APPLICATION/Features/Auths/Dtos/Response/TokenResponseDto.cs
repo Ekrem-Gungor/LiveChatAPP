@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DevBudy.APPLICATION.Features.Auths.Dtos.Response
 {
-    public class LoginResponseDto
+    public class TokenResponseDto
     {
-        public int UserId { get; set; }
+        public string Token { get; set; }
+        public DateTime ExpiresDate { get; set; }
     }
 }

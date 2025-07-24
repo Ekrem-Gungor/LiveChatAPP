@@ -47,6 +47,7 @@ namespace DevBudy.PERSISTANCE.Migrations
                     LastLogout = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastActivityTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsPersonalDataConsentGiven = table.Column<bool>(type: "bit", nullable: false),
+                    IsOnline = table.Column<bool>(type: "bit", nullable: false),
                     DataStatus = table.Column<int>(type: "int", nullable: false),
                     ActiveStatus = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -237,19 +238,19 @@ namespace DevBudy.PERSISTANCE.Migrations
                 columns: new[] { "Id", "ActiveStatus", "ConcurrencyStamp", "CreatedDate", "DataStatus", "DeletedDate", "Name", "NormalizedName", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, 1, "63f69bbe-8cb6-4457-b7f9-f5bba8a64fbf", new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4256), 1, null, "Developer", "DEVELOPER", null },
-                    { 2, 1, "6541323b-40f3-4574-a788-5f5b7513937d", new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4355), 1, null, "Admin", "ADMIN", null },
-                    { 3, 1, "a9ff38e6-823f-4d75-b0f4-33dac43ce1ec", new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4359), 1, null, "Member", "MEMBER", null }
+                    { 1, 1, "1084616c-95a9-40cf-9cd8-550bb13b2912", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5839), 1, null, "Developer", "DEVELOPER", null },
+                    { 2, 1, "1b2c92f9-6834-482b-9b5a-3cc21e5eb011", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5933), 1, null, "Admin", "ADMIN", null },
+                    { 3, 1, "8be8fedd-8e3a-4c51-9a87-bf6b291540e3", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5937), 1, null, "Member", "MEMBER", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ActivationCode", "ActiveStatus", "ConcurrencyStamp", "CreatedDate", "DataStatus", "DeletedDate", "Email", "EmailConfirmed", "IsPersonalDataConsentGiven", "LastActivityTime", "LastLogin", "LastLogout", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UpdatedDate", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ActivationCode", "ActiveStatus", "ConcurrencyStamp", "CreatedDate", "DataStatus", "DeletedDate", "Email", "EmailConfirmed", "IsOnline", "IsPersonalDataConsentGiven", "LastActivityTime", "LastLogin", "LastLogout", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UpdatedDate", "UserName" },
                 values: new object[,]
                 {
-                    { 1, 0, null, 1, "9acd1851-2eed-4a97-8b0a-2ef85de93659", new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4526), 1, null, "ekrmdsgnr@gmail.com", true, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "EKRMDSGNR@GMAIL.COM", "EKREM.GUNGOR", "AQAAAAIAAYagAAAAEBFKd7Sm3CGyjRp1bG9/VbjSjCl20dmUDcE3QUcgLzbQNl5OanZq0jqtPNjbZB+ceQ==", "12345678910", false, "2fb67b78-e067-4be0-a8f8-54b8830937d5", false, null, "ekrem.Gungor" },
-                    { 2, 0, null, 1, "e86b3a1b-3623-46e5-aa22-96b5abaeb1e8", new DateTime(2025, 7, 19, 0, 16, 47, 333, DateTimeKind.Local).AddTicks(2611), 1, null, "canberk.gunduz@example.com", true, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "CANBERK.GUNDUZ@EXAMPLE.COM", "CANBERK.GUNDUZ", "AQAAAAIAAYagAAAAEM+oI9yjb8i7CiC79FMEVepJIuX6TXX0uvHgcDNPTCbqjvLGkyhUeDlDqGEE6obzHg==", "12345678910", false, "f1a18475-f1b4-4ac6-9167-7eeae574d151", false, null, "canberk.Gunduz" },
-                    { 3, 0, null, 1, "3211f2cc-73f0-4dac-a2b2-cc2ae5969a25", new DateTime(2025, 7, 19, 0, 16, 47, 398, DateTimeKind.Local).AddTicks(7266), 1, null, "gunguzsenemm@gmail.com", true, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "GUNGUZSENEMM@GMAIL.COM", "SENEM.GUNDUZ", "AQAAAAIAAYagAAAAEO2Tu+/TmLyDs7XLPxdxw7IuhyDyYFNBkrNsghnbOBu9Q9lvju/WWYpj3CeaA2wBzA==", "12345678910", false, "0ce3b0ec-415b-4dc9-88f3-e42007fea6f1", false, null, "senem.Gunduz" }
+                    { 1, 0, null, 1, "20f02c63-3e0b-4310-8212-9212712561e9", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6118), 1, null, "ekrmdsgnr@gmail.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "EKRMDSGNR@GMAIL.COM", "EKREM.GUNGOR", "AQAAAAIAAYagAAAAEFrumiLgjsaNlqycUi0hhvGAtnwVoyszJUaOtYHSucrkHXAGvuVFPjwFJGPsF2cnHw==", "12345678910", false, "a5867e63-6748-4eab-8163-439b6d32aba0", false, null, "ekrem.Gungor" },
+                    { 2, 0, null, 1, "b5a928f6-e323-4774-9fe5-3c82c8c09280", new DateTime(2025, 7, 23, 2, 56, 55, 504, DateTimeKind.Local).AddTicks(7328), 1, null, "canberk.gunduz@example.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "CANBERK.GUNDUZ@EXAMPLE.COM", "CANBERK.GUNDUZ", "AQAAAAIAAYagAAAAEO4SB+TioOn3qpzBeupfXtP1Gea0r1LJqIgGJ3hIITZvBAd0anWSZpEGtAK6O0vsmQ==", "12345678910", false, "2a9ce9f9-7336-4da7-abe1-3c525cec99e6", false, null, "canberk.Gunduz" },
+                    { 3, 0, null, 1, "775f4e9b-92cf-4b41-9e79-453beac0756b", new DateTime(2025, 7, 23, 2, 56, 55, 573, DateTimeKind.Local).AddTicks(6715), 1, null, "gunguzsenemm@gmail.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "GUNGUZSENEMM@GMAIL.COM", "SENEM.GUNDUZ", "AQAAAAIAAYagAAAAEAUeLUTpyGg/v6r8mgpaIKwNUYeFHNw/MLBwIo47YgXFmu/Gml9VbeLiAiAVQXWU8Q==", "12345678910", false, "159a760c-df9b-4afb-827c-c04a0e102cf7", false, null, "senem.Gunduz" }
                 });
 
             migrationBuilder.InsertData(
@@ -257,9 +258,9 @@ namespace DevBudy.PERSISTANCE.Migrations
                 columns: new[] { "ID", "ActiveStatus", "CreatedDate", "DataStatus", "DeletedDate", "FirstName", "LastName", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4499), 1, null, "Ekrem", "Güngör", null },
-                    { 2, 1, new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4501), 1, null, "Canberk", "Gündüz", null },
-                    { 3, 1, new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4502), 1, null, "Senem", "Gündüz", null }
+                    { 1, 1, new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6089), 1, null, "Ekrem", "Güngör", null },
+                    { 2, 1, new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6091), 1, null, "Canberk", "Gündüz", null },
+                    { 3, 1, new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6092), 1, null, "Senem", "Gündüz", null }
                 });
 
             migrationBuilder.InsertData(
@@ -267,9 +268,9 @@ namespace DevBudy.PERSISTANCE.Migrations
                 columns: new[] { "RoleId", "UserId", "ActiveStatus", "CreatedDate", "DataStatus", "DeletedDate", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, new DateTime(2025, 7, 19, 0, 16, 47, 462, DateTimeKind.Local).AddTicks(7572), 1, null, null },
-                    { 2, 2, 1, new DateTime(2025, 7, 19, 0, 16, 47, 462, DateTimeKind.Local).AddTicks(7604), 1, null, null },
-                    { 3, 3, 1, new DateTime(2025, 7, 19, 0, 16, 47, 462, DateTimeKind.Local).AddTicks(7606), 1, null, null }
+                    { 1, 1, 1, new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3802), 1, null, null },
+                    { 2, 2, 1, new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3836), 1, null, null },
+                    { 3, 3, 1, new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3838), 1, null, null }
                 });
 
             migrationBuilder.CreateIndex(

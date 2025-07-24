@@ -74,8 +74,8 @@ namespace DevBudy.PERSISTANCE.Migrations
                         {
                             Id = 1,
                             ActiveStatus = 1,
-                            ConcurrencyStamp = "63f69bbe-8cb6-4457-b7f9-f5bba8a64fbf",
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4256),
+                            ConcurrencyStamp = "1084616c-95a9-40cf-9cd8-550bb13b2912",
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5839),
                             DataStatus = 1,
                             Name = "Developer",
                             NormalizedName = "DEVELOPER"
@@ -84,8 +84,8 @@ namespace DevBudy.PERSISTANCE.Migrations
                         {
                             Id = 2,
                             ActiveStatus = 1,
-                            ConcurrencyStamp = "6541323b-40f3-4574-a788-5f5b7513937d",
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4355),
+                            ConcurrencyStamp = "1b2c92f9-6834-482b-9b5a-3cc21e5eb011",
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5933),
                             DataStatus = 1,
                             Name = "Admin",
                             NormalizedName = "ADMIN"
@@ -94,8 +94,8 @@ namespace DevBudy.PERSISTANCE.Migrations
                         {
                             Id = 3,
                             ActiveStatus = 1,
-                            ConcurrencyStamp = "a9ff38e6-823f-4d75-b0f4-33dac43ce1ec",
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4359),
+                            ConcurrencyStamp = "8be8fedd-8e3a-4c51-9a87-bf6b291540e3",
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5937),
                             DataStatus = 1,
                             Name = "Member",
                             NormalizedName = "MEMBER"
@@ -137,6 +137,9 @@ namespace DevBudy.PERSISTANCE.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsOnline")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsPersonalDataConsentGiven")
@@ -205,11 +208,12 @@ namespace DevBudy.PERSISTANCE.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             ActiveStatus = 1,
-                            ConcurrencyStamp = "9acd1851-2eed-4a97-8b0a-2ef85de93659",
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4526),
+                            ConcurrencyStamp = "20f02c63-3e0b-4310-8212-9212712561e9",
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6118),
                             DataStatus = 1,
                             Email = "ekrmdsgnr@gmail.com",
                             EmailConfirmed = true,
+                            IsOnline = false,
                             IsPersonalDataConsentGiven = false,
                             LastActivityTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -217,10 +221,10 @@ namespace DevBudy.PERSISTANCE.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "EKRMDSGNR@GMAIL.COM",
                             NormalizedUserName = "EKREM.GUNGOR",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBFKd7Sm3CGyjRp1bG9/VbjSjCl20dmUDcE3QUcgLzbQNl5OanZq0jqtPNjbZB+ceQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFrumiLgjsaNlqycUi0hhvGAtnwVoyszJUaOtYHSucrkHXAGvuVFPjwFJGPsF2cnHw==",
                             PhoneNumber = "12345678910",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2fb67b78-e067-4be0-a8f8-54b8830937d5",
+                            SecurityStamp = "a5867e63-6748-4eab-8163-439b6d32aba0",
                             TwoFactorEnabled = false,
                             UserName = "ekrem.Gungor"
                         },
@@ -229,11 +233,12 @@ namespace DevBudy.PERSISTANCE.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             ActiveStatus = 1,
-                            ConcurrencyStamp = "e86b3a1b-3623-46e5-aa22-96b5abaeb1e8",
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 333, DateTimeKind.Local).AddTicks(2611),
+                            ConcurrencyStamp = "b5a928f6-e323-4774-9fe5-3c82c8c09280",
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 504, DateTimeKind.Local).AddTicks(7328),
                             DataStatus = 1,
                             Email = "canberk.gunduz@example.com",
                             EmailConfirmed = true,
+                            IsOnline = false,
                             IsPersonalDataConsentGiven = false,
                             LastActivityTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -241,10 +246,10 @@ namespace DevBudy.PERSISTANCE.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CANBERK.GUNDUZ@EXAMPLE.COM",
                             NormalizedUserName = "CANBERK.GUNDUZ",
-                            PasswordHash = "AQAAAAIAAYagAAAAEM+oI9yjb8i7CiC79FMEVepJIuX6TXX0uvHgcDNPTCbqjvLGkyhUeDlDqGEE6obzHg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEO4SB+TioOn3qpzBeupfXtP1Gea0r1LJqIgGJ3hIITZvBAd0anWSZpEGtAK6O0vsmQ==",
                             PhoneNumber = "12345678910",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f1a18475-f1b4-4ac6-9167-7eeae574d151",
+                            SecurityStamp = "2a9ce9f9-7336-4da7-abe1-3c525cec99e6",
                             TwoFactorEnabled = false,
                             UserName = "canberk.Gunduz"
                         },
@@ -253,11 +258,12 @@ namespace DevBudy.PERSISTANCE.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             ActiveStatus = 1,
-                            ConcurrencyStamp = "3211f2cc-73f0-4dac-a2b2-cc2ae5969a25",
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 398, DateTimeKind.Local).AddTicks(7266),
+                            ConcurrencyStamp = "775f4e9b-92cf-4b41-9e79-453beac0756b",
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 573, DateTimeKind.Local).AddTicks(6715),
                             DataStatus = 1,
                             Email = "gunguzsenemm@gmail.com",
                             EmailConfirmed = true,
+                            IsOnline = false,
                             IsPersonalDataConsentGiven = false,
                             LastActivityTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -265,10 +271,10 @@ namespace DevBudy.PERSISTANCE.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "GUNGUZSENEMM@GMAIL.COM",
                             NormalizedUserName = "SENEM.GUNDUZ",
-                            PasswordHash = "AQAAAAIAAYagAAAAEO2Tu+/TmLyDs7XLPxdxw7IuhyDyYFNBkrNsghnbOBu9Q9lvju/WWYpj3CeaA2wBzA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAUeLUTpyGg/v6r8mgpaIKwNUYeFHNw/MLBwIo47YgXFmu/Gml9VbeLiAiAVQXWU8Q==",
                             PhoneNumber = "12345678910",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0ce3b0ec-415b-4dc9-88f3-e42007fea6f1",
+                            SecurityStamp = "159a760c-df9b-4afb-827c-c04a0e102cf7",
                             TwoFactorEnabled = false,
                             UserName = "senem.Gunduz"
                         });
@@ -313,7 +319,7 @@ namespace DevBudy.PERSISTANCE.Migrations
                         {
                             ID = 1,
                             ActiveStatus = 1,
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4499),
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6089),
                             DataStatus = 1,
                             FirstName = "Ekrem",
                             LastName = "Güngör"
@@ -322,7 +328,7 @@ namespace DevBudy.PERSISTANCE.Migrations
                         {
                             ID = 2,
                             ActiveStatus = 1,
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4501),
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6091),
                             DataStatus = 1,
                             FirstName = "Canberk",
                             LastName = "Gündüz"
@@ -331,7 +337,7 @@ namespace DevBudy.PERSISTANCE.Migrations
                         {
                             ID = 3,
                             ActiveStatus = 1,
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 269, DateTimeKind.Local).AddTicks(4502),
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6092),
                             DataStatus = 1,
                             FirstName = "Senem",
                             LastName = "Gündüz"
@@ -373,7 +379,7 @@ namespace DevBudy.PERSISTANCE.Migrations
                             UserId = 1,
                             RoleId = 1,
                             ActiveStatus = 1,
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 462, DateTimeKind.Local).AddTicks(7572),
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3802),
                             DataStatus = 1
                         },
                         new
@@ -381,7 +387,7 @@ namespace DevBudy.PERSISTANCE.Migrations
                             UserId = 2,
                             RoleId = 2,
                             ActiveStatus = 1,
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 462, DateTimeKind.Local).AddTicks(7604),
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3836),
                             DataStatus = 1
                         },
                         new
@@ -389,7 +395,7 @@ namespace DevBudy.PERSISTANCE.Migrations
                             UserId = 3,
                             RoleId = 3,
                             ActiveStatus = 1,
-                            CreatedDate = new DateTime(2025, 7, 19, 0, 16, 47, 462, DateTimeKind.Local).AddTicks(7606),
+                            CreatedDate = new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3838),
                             DataStatus = 1
                         });
                 });

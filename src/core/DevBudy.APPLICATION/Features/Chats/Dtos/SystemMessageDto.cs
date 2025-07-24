@@ -10,11 +10,11 @@ namespace DevBudy.APPLICATION.Features.Chats.Dtos
     {
         public SystemMessageDto()
         {
-            SenderName = "System";
-            SystemMessage = ", Sohbete katıldı.";
+            SenderUserName = "System";
+            Message = ", Sohbete katıldı.";
         }
-        public string SenderName { get; }
-        public string SystemMessage { get; }
+        public string SenderUserName { get; }
+        public string Message { get; }
         public string JoinedUserName { get; set; }
     }
 }

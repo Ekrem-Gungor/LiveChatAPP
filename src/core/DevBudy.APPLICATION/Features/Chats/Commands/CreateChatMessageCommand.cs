@@ -9,7 +9,7 @@ namespace DevBudy.APPLICATION.Features.Chats.Commands
 {
     public class CreateChatMessageCommand : IRequest<int>
     {
-        public int SenderUserId { get; set; }
+        public string SenderUserName { get; set; }
         public string Message { get; set; }
     }
 }

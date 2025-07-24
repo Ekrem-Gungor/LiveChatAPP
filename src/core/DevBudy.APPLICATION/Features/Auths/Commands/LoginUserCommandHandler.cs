@@ -29,7 +29,7 @@ namespace DevBudy.APPLICATION.Features.Auths.Commands
 
             // Refactor : İleride JWT token oluşturma işlemi eklenecek.
 
-            LoginResponseDto loginResponseDto = new() { UserName = user.UserName };
+            LoginResponseDto loginResponseDto = new() { UserId = user.Id };
 
             return loginResponseDto;
         }

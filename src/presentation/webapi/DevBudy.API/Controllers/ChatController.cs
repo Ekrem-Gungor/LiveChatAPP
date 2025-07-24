@@ -24,7 +24,7 @@ namespace DevBudy.API.Controllers
             return Ok();
         }
 
-        [HttpGet("getall")]
+        [HttpGet("messages")]
         public async Task<IActionResult> GetAllChatMessages()
         {
             var result = await _mediator.Send(new GetAllChatMessagesQuery());

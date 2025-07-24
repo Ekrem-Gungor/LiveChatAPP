@@ -10,11 +10,21 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(s =>
+{
+    s.IdleTimeout = TimeSpan.FromDays(1);
+    s.Cookie.HttpOnly = true;
+    s.Cookie.IsEssential = true;
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCustomIdentityServices();
+builder.Services.AddJwtAuthtentication(builder.Configuration, "AccessToken");
+builder.Services.AddMapperInjection();
 
 // Autofac DI Container
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -57,6 +67,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowReactApp");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

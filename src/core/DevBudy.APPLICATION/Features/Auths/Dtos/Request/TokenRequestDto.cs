@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevBudy.APPLICATION.Features.Auths.Dtos.Response
+namespace DevBudy.APPLICATION.Features.Auths.Dtos.Request
 {
-    public class LoginResponseDto
+    public class TokenRequestDto
     {
         public int UserId { get; set; }
     }

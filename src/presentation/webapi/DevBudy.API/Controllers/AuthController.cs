@@ -22,8 +22,9 @@ namespace DevBudy.API.Controllers
         {
             try
             {
-                LoginResponseDto result = await _mediatR.Send(requestCmd);
-                return Ok(result);
+                LoginResponseDto loginResult = await _mediatR.Send(requestCmd);
+                TokenResponseDto jwtResult = await _mediatR.Send(new GenerateTokenCommand() { UserId = loginResult.UserId });
+                return Ok(jwtResult);
             }
             catch (Exception ex)
             {

@@ -16,6 +16,7 @@ namespace DevBudy.DOMAIN.Entities.Concretes
             CreatedDate = DateTime.Now;
             DataStatus = DataStatus.Inserted;
             ActiveStatus = ActiveStatus.Active;
+            IsOnline = false;
         }
         public int ID { get; set; }
         public Guid? ActivationCode { get; set; }
@@ -26,6 +27,7 @@ namespace DevBudy.DOMAIN.Entities.Concretes
         public DateTime LastLogout { get; set; }
         public DateTime LastActivityTime { get; set; }
         public bool IsPersonalDataConsentGiven { get; set; }
+        public bool IsOnline { get; set; }
         public DataStatus DataStatus { get; set; }
         public ActiveStatus ActiveStatus { get; set; }
 
