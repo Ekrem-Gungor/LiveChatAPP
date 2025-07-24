@@ -1,5 +1,4 @@
 ﻿using DevBudy.APPLICATION.Features.Auths.Commands;
-using DevBudy.APPLICATION.Features.Auths.Dtos.Request;
 using DevBudy.APPLICATION.Features.Auths.Dtos.Response;
 using MediatR;
 using Microsoft.AspNetCore.Http;

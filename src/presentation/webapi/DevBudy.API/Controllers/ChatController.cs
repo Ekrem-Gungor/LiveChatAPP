@@ -1,6 +1,9 @@
-﻿using DevBudy.APPLICATION.Features.Chats.Commands;
+﻿using DevBudy.APPLICATION.Features.Auths.Dtos.Response;
+using DevBudy.APPLICATION.Features.Auths.Queries;
+using DevBudy.APPLICATION.Features.Chats.Commands;
 using DevBudy.APPLICATION.Features.Chats.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +31,13 @@ namespace DevBudy.API.Controllers
         public async Task<IActionResult> GetAllChatMessages()
         {
             var result = await _mediator.Send(new GetAllChatMessagesQuery());
+            return Ok(result);
+        }
+
+        [HttpGet("connected-users")]
+        public async Task<IActionResult> GetConnectedUsers()
+        {
+            List<ConnectedUserDto> result = await _mediator.Send(new ConnectedUsersQuery());
             return Ok(result);
         }
     }

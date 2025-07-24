@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevBudy.APPLICATION.Features.Auths.Dtos.Request
+namespace DevBudy.APPLICATION.Features.Auths.Dtos.Response
 {
-    public class LoginRequestDto
+    public class ConnectedUserDto
     {
+        public int Id { get; set; }
         public string UserName { get; set; }
-        public int Password { get; set; }
+        public bool IsOnline { get; set; }
     }
 }
