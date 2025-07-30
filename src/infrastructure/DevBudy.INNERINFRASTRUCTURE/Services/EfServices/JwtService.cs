@@ -62,10 +62,5 @@ namespace DevBudy.INNERINFRASTRUCTURE.Services.EfServices
                 ExpiresDate = token.ValidTo
             };
         }
-
-        public bool ValidateToken(string token)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

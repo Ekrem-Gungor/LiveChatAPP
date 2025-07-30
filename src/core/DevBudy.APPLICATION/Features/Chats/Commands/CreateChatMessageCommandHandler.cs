@@ -44,7 +44,7 @@ namespace DevBudy.APPLICATION.Features.Chats.Commands
                 Id = chatMessage.ID,
                 Message = chatMessage.Message,
                 SenderUserId = chatMessage.SenderID,
-                SenderUserName = chatMessage.Sender?.UserName ?? "Unknown User",
+                SenderUserName = chatMessage.Sender?.UserName,
                 SendAt = chatMessage.CreatedDate
             };
 

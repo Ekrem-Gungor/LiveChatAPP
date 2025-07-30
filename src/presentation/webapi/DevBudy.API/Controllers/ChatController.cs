@@ -33,12 +33,5 @@ namespace DevBudy.API.Controllers
             var result = await _mediator.Send(new GetAllChatMessagesQuery());
             return Ok(result);
         }
-
-        [HttpGet("connected-users")]
-        public async Task<IActionResult> GetConnectedUsers()
-        {
-            List<ConnectedUserDto> result = await _mediator.Send(new ConnectedUsersQuery());
-            return Ok(result);
-        }
     }
 }

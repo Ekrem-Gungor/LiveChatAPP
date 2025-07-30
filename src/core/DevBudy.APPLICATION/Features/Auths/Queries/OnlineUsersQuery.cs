@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DevBudy.APPLICATION.Features.Auths.Queries
 {
-    public class ConnectedUsersQuery : IRequest<List<ConnectedUserDto>>
+    public class OnlineUsersQuery : IRequest<List<ConnectedUserDto>>
     {
 
     }

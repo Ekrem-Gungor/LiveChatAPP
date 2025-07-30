@@ -59,7 +59,7 @@ namespace DevBudy.PERSISTANCE.Repositories.EfRepositories
 
         public async Task UpdateAsync(T entity)
         {
-            T originalEntity = await GetByIdAsync(entity);
+            T originalEntity = await GetByIdAsync(entity.ID);
             _context.Set<T>().Entry(originalEntity).CurrentValues.SetValues(entity);
             await SaveAsync();
         }

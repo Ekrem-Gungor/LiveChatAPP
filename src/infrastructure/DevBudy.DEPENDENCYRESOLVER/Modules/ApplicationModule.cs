@@ -20,13 +20,13 @@ namespace DevBudy.DEPENDENCYRESOLVER.Modules
                 Assembly.GetAssembly(typeof(BaseService<,>))
             };
 
-            #region ConsoleLogRegisteredServices
-            IEnumerable<Type> types = assemblies.SelectMany(a => a.GetTypes()).Where(t => t.Name.EndsWith("Service") && t.IsClass);
-            foreach (Type type in types)
-            {
-                Console.WriteLine($"Service Registered: {type.Name}");
-            }
-            #endregion
+            //#region ConsoleLogRegisteredServices
+            //IEnumerable<Type> types = assemblies.SelectMany(a => a.GetTypes()).Where(t => t.Name.EndsWith("Service") && t.IsClass);
+            //foreach (Type type in types)
+            //{
+            //    Console.WriteLine($"Service Registered: {type.Name}");
+            //}
+            //#endregion
 
             builder.RegisterAssemblyTypes(assemblies)
                 .Where(t => t.Name.EndsWith("Service") && t.IsClass)

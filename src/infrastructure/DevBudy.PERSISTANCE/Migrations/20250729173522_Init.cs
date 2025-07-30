@@ -213,7 +213,6 @@ namespace DevBudy.PERSISTANCE.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Message = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     MessageType = table.Column<int>(type: "int", nullable: false),
-                    IsEdited = table.Column<bool>(type: "bit", nullable: false),
                     MetaData = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     SenderID = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -238,9 +237,9 @@ namespace DevBudy.PERSISTANCE.Migrations
                 columns: new[] { "Id", "ActiveStatus", "ConcurrencyStamp", "CreatedDate", "DataStatus", "DeletedDate", "Name", "NormalizedName", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, 1, "1084616c-95a9-40cf-9cd8-550bb13b2912", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5839), 1, null, "Developer", "DEVELOPER", null },
-                    { 2, 1, "1b2c92f9-6834-482b-9b5a-3cc21e5eb011", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5933), 1, null, "Admin", "ADMIN", null },
-                    { 3, 1, "8be8fedd-8e3a-4c51-9a87-bf6b291540e3", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(5937), 1, null, "Member", "MEMBER", null }
+                    { 1, 1, "9b7ffe22-088d-420c-93c9-d327f7872720", new DateTime(2025, 7, 29, 20, 35, 21, 276, DateTimeKind.Local).AddTicks(5318), 1, null, "Developer", "DEVELOPER", null },
+                    { 2, 1, "9412b3be-7d59-473b-aae6-3e58d691173d", new DateTime(2025, 7, 29, 20, 35, 21, 276, DateTimeKind.Local).AddTicks(5402), 1, null, "Admin", "ADMIN", null },
+                    { 3, 1, "fd48ade4-e620-4dc5-ac14-6fa3dc2c3fdd", new DateTime(2025, 7, 29, 20, 35, 21, 276, DateTimeKind.Local).AddTicks(5406), 1, null, "Member", "MEMBER", null }
                 });
 
             migrationBuilder.InsertData(
@@ -248,9 +247,9 @@ namespace DevBudy.PERSISTANCE.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ActivationCode", "ActiveStatus", "ConcurrencyStamp", "CreatedDate", "DataStatus", "DeletedDate", "Email", "EmailConfirmed", "IsOnline", "IsPersonalDataConsentGiven", "LastActivityTime", "LastLogin", "LastLogout", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UpdatedDate", "UserName" },
                 values: new object[,]
                 {
-                    { 1, 0, null, 1, "20f02c63-3e0b-4310-8212-9212712561e9", new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6118), 1, null, "ekrmdsgnr@gmail.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "EKRMDSGNR@GMAIL.COM", "EKREM.GUNGOR", "AQAAAAIAAYagAAAAEFrumiLgjsaNlqycUi0hhvGAtnwVoyszJUaOtYHSucrkHXAGvuVFPjwFJGPsF2cnHw==", "12345678910", false, "a5867e63-6748-4eab-8163-439b6d32aba0", false, null, "ekrem.Gungor" },
-                    { 2, 0, null, 1, "b5a928f6-e323-4774-9fe5-3c82c8c09280", new DateTime(2025, 7, 23, 2, 56, 55, 504, DateTimeKind.Local).AddTicks(7328), 1, null, "canberk.gunduz@example.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "CANBERK.GUNDUZ@EXAMPLE.COM", "CANBERK.GUNDUZ", "AQAAAAIAAYagAAAAEO4SB+TioOn3qpzBeupfXtP1Gea0r1LJqIgGJ3hIITZvBAd0anWSZpEGtAK6O0vsmQ==", "12345678910", false, "2a9ce9f9-7336-4da7-abe1-3c525cec99e6", false, null, "canberk.Gunduz" },
-                    { 3, 0, null, 1, "775f4e9b-92cf-4b41-9e79-453beac0756b", new DateTime(2025, 7, 23, 2, 56, 55, 573, DateTimeKind.Local).AddTicks(6715), 1, null, "gunguzsenemm@gmail.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "GUNGUZSENEMM@GMAIL.COM", "SENEM.GUNDUZ", "AQAAAAIAAYagAAAAEAUeLUTpyGg/v6r8mgpaIKwNUYeFHNw/MLBwIo47YgXFmu/Gml9VbeLiAiAVQXWU8Q==", "12345678910", false, "159a760c-df9b-4afb-827c-c04a0e102cf7", false, null, "senem.Gunduz" }
+                    { 1, 0, null, 1, "41a1e67f-52ce-40ed-a0d8-c4e81c1e896d", new DateTime(2025, 7, 29, 20, 35, 21, 276, DateTimeKind.Local).AddTicks(5606), 1, null, "ekrmdsgnr@gmail.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "EKRMDSGNR@GMAIL.COM", "EKREM.GUNGOR", "AQAAAAIAAYagAAAAEMGZ3zr5q9SHjXUFDdS6ir9KwJoic7XXouLVLUq+2hommGaNHr/y/JMWFzWrKX9Clw==", "12345678910", false, "47db6d0a-8ec9-4fc0-93a2-43083ab99bfd", false, null, "ekrem.Gungor" },
+                    { 2, 0, null, 1, "fb2802e1-6b3b-4c94-8c12-299ec4dfbcba", new DateTime(2025, 7, 29, 20, 35, 21, 340, DateTimeKind.Local).AddTicks(8462), 1, null, "canberk.gunduz@example.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "CANBERK.GUNDUZ@EXAMPLE.COM", "CANBERK.GUNDUZ", "AQAAAAIAAYagAAAAEBONjfQwpXs5+cGhetlaf7TTzq/GumcXzsCvA9zhxo1i4DxL67MGZ/8UgNyH7slnZQ==", "12345678910", false, "e6814cd5-cc4a-456b-bb9f-b7ec16d3abf8", false, null, "canberk.Gunduz" },
+                    { 3, 0, null, 1, "bc6534d7-ec74-4a10-b232-e573afe272e3", new DateTime(2025, 7, 29, 20, 35, 21, 405, DateTimeKind.Local).AddTicks(1029), 1, null, "gunguzsenemm@gmail.com", true, false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "GUNGUZSENEMM@GMAIL.COM", "SENEM.GUNDUZ", "AQAAAAIAAYagAAAAEDIpy90QwPcrMjX1PPNJD7fUNZ4J2e1dDdTOrWnqff6WdqVqwnEltHV6+NR6npjPaw==", "12345678910", false, "7790ee16-2af0-4a10-9800-9752e8887dee", false, null, "senem.Gunduz" }
                 });
 
             migrationBuilder.InsertData(
@@ -258,9 +257,9 @@ namespace DevBudy.PERSISTANCE.Migrations
                 columns: new[] { "ID", "ActiveStatus", "CreatedDate", "DataStatus", "DeletedDate", "FirstName", "LastName", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6089), 1, null, "Ekrem", "Güngör", null },
-                    { 2, 1, new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6091), 1, null, "Canberk", "Gündüz", null },
-                    { 3, 1, new DateTime(2025, 7, 23, 2, 56, 55, 438, DateTimeKind.Local).AddTicks(6092), 1, null, "Senem", "Gündüz", null }
+                    { 1, 1, new DateTime(2025, 7, 29, 20, 35, 21, 276, DateTimeKind.Local).AddTicks(5578), 1, null, "Ekrem", "Güngör", null },
+                    { 2, 1, new DateTime(2025, 7, 29, 20, 35, 21, 276, DateTimeKind.Local).AddTicks(5580), 1, null, "Canberk", "Gündüz", null },
+                    { 3, 1, new DateTime(2025, 7, 29, 20, 35, 21, 276, DateTimeKind.Local).AddTicks(5581), 1, null, "Senem", "Gündüz", null }
                 });
 
             migrationBuilder.InsertData(
@@ -268,9 +267,9 @@ namespace DevBudy.PERSISTANCE.Migrations
                 columns: new[] { "RoleId", "UserId", "ActiveStatus", "CreatedDate", "DataStatus", "DeletedDate", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3802), 1, null, null },
-                    { 2, 2, 1, new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3836), 1, null, null },
-                    { 3, 3, 1, new DateTime(2025, 7, 23, 2, 56, 55, 645, DateTimeKind.Local).AddTicks(3838), 1, null, null }
+                    { 1, 1, 1, new DateTime(2025, 7, 29, 20, 35, 21, 470, DateTimeKind.Local).AddTicks(4265), 1, null, null },
+                    { 2, 2, 1, new DateTime(2025, 7, 29, 20, 35, 21, 470, DateTimeKind.Local).AddTicks(4282), 1, null, null },
+                    { 3, 3, 1, new DateTime(2025, 7, 29, 20, 35, 21, 470, DateTimeKind.Local).AddTicks(4283), 1, null, null }
                 });
 
             migrationBuilder.CreateIndex(

@@ -1,4 +1,6 @@
 ﻿using DevBudy.APPLICATION.Features.AppUsers.Commands;
+using DevBudy.APPLICATION.Features.Auths.Dtos.Response;
+using DevBudy.APPLICATION.Features.Auths.Queries;
 using DevBudy.APPLICATION.Features.Chats.Commands;
 using DevBudy.DOMAIN.Entities.Concretes;
 using MediatR;
@@ -16,7 +18,6 @@ namespace DevBudy.API.Hubs
 
         public async Task SendMessage(string senderName, string message)
         {
-            // Todo : En son burada kaldım.
             await _mediatR.Send(new CreateChatMessageCommand
             {
                 SenderUserName = senderName,
@@ -31,7 +32,13 @@ namespace DevBudy.API.Hubs
                 JoinedUserName = joinedName
             });
         }
-        // Burada kaldım Authenticate olan kullanıcının ID sini alabilmek adına mecbur JWT kuracağım.
+
+        public async Task GetOnlineUsers()
+        {
+            List<ConnectedUserDto> onlineUsers = await _mediatR.Send(new OnlineUsersQuery());
+            await Clients.All.SendAsync("ReceiveOnlineUsers", onlineUsers);
+        }
+
         public override async Task OnConnectedAsync()
         {
             await _mediatR.Send(new SetUserOnlineStatusCommand

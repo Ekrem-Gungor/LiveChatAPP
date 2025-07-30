@@ -12,12 +12,10 @@ namespace DevBudy.DOMAIN.Entities.Concretes
     {
         public ChatMessage()
         {
-            IsEdited = false;
             MessageType = MessageType.Text; // Default message type
         }
         public string Message { get; set; }
         public MessageType MessageType { get; set; }
-        public bool IsEdited { get; set; }
         public string? MetaData { get; set; } // IP, UserAgent, etc vs. gibi metadata bilgilierini saklamak için kullanılabilir.
         public int? SenderID { get; set; }
 

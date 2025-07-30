@@ -21,9 +21,6 @@ namespace DevBudy.PERSISTANCE.Configurations
             builder.Property(x => x.MessageType)
                 .IsRequired();
 
-            builder.Property(x => x.IsEdited)
-                .IsRequired();
-
             builder.Property(x => x.MetaData)
                 .HasMaxLength(500)
                 .IsRequired(false);

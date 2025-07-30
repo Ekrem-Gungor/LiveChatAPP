@@ -1,5 +1,6 @@
 ﻿using DevBudy.API.Hubs;
 using DevBudy.APPLICATION.Events.ChatMessages;
+using DevBudy.APPLICATION.Features.Chats.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.SignalR;
 
@@ -17,8 +18,7 @@ namespace DevBudy.API.EventHandlers.ChatMessages
 
         public async Task Handle(ChatMessageCreatedEvent notification, CancellationToken cancellationToken)
         {
-            // Refactor : ChatMessage respone sınıfı düzenlenecek.
-            var message = notification.ChatMessage;
+            ChatMessageDto message = notification.ChatMessage;
             await _hubContext.Clients.All.SendAsync("ReceiveMessage", new
             {
                 message.Message,

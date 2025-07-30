@@ -15,11 +15,5 @@ namespace DevBudy.APPLICATION.Services
         /// <param name="userId"></param>
         /// <returns>Oluşturulan JWT jetonunu temsil eden bir Dto verir</returns>
         Task<TokenResponseDto> GenerateToken(string userId);
-        /// <summary>
-        /// Bu metot, verilen JWT token'ı doğrular.
-        /// </summary>
-        /// <param name="token">The JWT token to validate.</param>
-        /// <returns>Jeton geçerliyse doğru; Aksi halde yanlış.</returns>
-        bool ValidateToken(string token);
     }
 }

@@ -1,6 +1,8 @@
-﻿using DevBudy.DOMAIN.Entities.Concretes;
+﻿using DevBudy.APPLICATION.Features.Auths.Dtos.Response;
+using DevBudy.DOMAIN.Entities.Concretes;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;

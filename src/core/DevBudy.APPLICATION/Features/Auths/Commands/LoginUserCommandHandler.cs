@@ -27,8 +27,6 @@ namespace DevBudy.APPLICATION.Features.Auths.Commands
             SignInResult result = await _signInManager.PasswordSignInAsync(user, request.Password.ToString(), true, true);
             if (!result.Succeeded) throw new UnauthorizedAccessException("Invalid username or password.");
 
-            // Refactor : İleride JWT token oluşturma işlemi eklenecek.
-
             LoginResponseDto loginResponseDto = new() { UserId = user.Id };
 
             return loginResponseDto;

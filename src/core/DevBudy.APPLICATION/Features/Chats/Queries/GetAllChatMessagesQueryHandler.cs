@@ -24,10 +24,10 @@ namespace DevBudy.APPLICATION.Features.Chats.Queries
                 .Select(msg => new ChatMessageDto
                 {
                     Id = msg.ID,
-                    Message = msg.Message,
-                    SendAt = msg.CreatedDate,
                     SenderUserId = msg.SenderID,
-                    SenderUserName = msg.Sender.UserName
+                    SenderUserName = msg.Sender.UserName,
+                    Message = msg.Message,
+                    SendAt = msg.CreatedDate
                 }).ToList();
             return chatMessages;
         }

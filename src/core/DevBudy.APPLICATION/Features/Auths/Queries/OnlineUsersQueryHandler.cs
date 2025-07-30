@@ -11,21 +11,21 @@ using System.Threading.Tasks;
 
 namespace DevBudy.APPLICATION.Features.Auths.Queries
 {
-    public class ConnectedUsersQueryHandler : IRequestHandler<ConnectedUsersQuery, List<ConnectedUserDto>>
+    public class OnlineUsersQueryHandler : IRequestHandler<OnlineUsersQuery, List<ConnectedUserDto>>
     {
         private readonly UserManager<AppUser> _userManager;
-        public ConnectedUsersQueryHandler(UserManager<AppUser> userManager)
+        public OnlineUsersQueryHandler(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
         }
 
-        public async Task<List<ConnectedUserDto>> Handle(ConnectedUsersQuery request, CancellationToken cancellationToken)
+        public async Task<List<ConnectedUserDto>> Handle(OnlineUsersQuery request, CancellationToken cancellationToken)
         {
             List<ConnectedUserDto> connectedUsers = await _userManager.Users
                 .Select(user => new ConnectedUserDto
                 {
                     Id = user.Id,
-                    UserName = user.UserName, // Assuming UserName is the display name
+                    UserName = user.UserName,
                     IsOnline = user.IsOnline
                 }).ToListAsync();
             return connectedUsers;
